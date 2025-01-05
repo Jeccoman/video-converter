@@ -30,7 +30,7 @@ export default function VideoUploaderWithBase64Delay() {
       setPreview(result)
       setIsLoading(false)
       
-      //  base64 output
+      // Simulate processing time for base64 output
       const progressInterval = setInterval(() => {
         setProgress((prevProgress) => {
           if (prevProgress >= 100) {
@@ -130,8 +130,8 @@ export default function VideoUploaderWithBase64Delay() {
         {preview && !isLoading && (
           <div className="mt-6">
             <h3 className="text-lg font-semibold mb-2">Video Preview</h3>
-            <div className="max-w-sm mx-auto">
-              <Suspense fallback={<div className="w-full h-12 bg-gray-200 rounded-lg flex items-center justify-center">Loading video player...</div>}>
+            <div className="max-w-sm max-h-[150px] mx-auto overflow-hidden">
+              <Suspense fallback={<div className="w-full h-[150px] bg-gray-200 rounded-lg flex items-center justify-center">Loading video player...</div>}>
                 <LazyVideoPlayer src={preview} />
               </Suspense>
             </div>
