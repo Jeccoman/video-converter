@@ -2,6 +2,7 @@
 "use client"
 
 import { useState } from "react";
+import { Input } from "@/components/ui/input";
 
 export default function VideoPage() {
    const [preview,setPreview] =useState('')
@@ -18,7 +19,7 @@ export default function VideoPage() {
     }
     return (
         <div>
-           <input type="file" onChange={onChange} />
+           <Input type="file" onChange={onChange} />
            {preview && <video src={preview} />}
         </div>
     );
